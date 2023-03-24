@@ -4,8 +4,7 @@ import "dotenv/config"
 import "reflect-metadata"
 import Customer from "./entities/customer.entity"
 import Contact from "./entities/contact.entity"
-import {initial1679608230928} from "./migrations/1679608230928-initial"
-import {initial1679610672767} from "./migrations/1679610672767-initial"
+import {initial1679697495978} from "./migrations/1679697495978-initial"
 
 const AppDataSource = new DataSource(
     process.env.NODE_ENV === "test" ?
@@ -26,7 +25,7 @@ const AppDataSource = new DataSource(
         logging: true,
         synchronize: false,
         entities: [Customer, Contact],
-        migrations: [initial1679608230928, initial1679610672767]
+        migrations: [initial1679697495978]
     }
 )
 export default AppDataSource

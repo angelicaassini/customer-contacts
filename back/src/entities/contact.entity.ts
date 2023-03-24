@@ -8,13 +8,13 @@ class Contact{
     @PrimaryGeneratedColumn("uuid")
     id: string;
 
-    @Column()
+    @Column({ nullable: false })
     name: string;
 
-    @Column()
+    @Column({ nullable: false })
     phone: string;
 
-    @Column()
+    @Column({ nullable: false, unique: true })
     email: string;
 
     @Column({default: true})
