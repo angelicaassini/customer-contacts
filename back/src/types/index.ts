@@ -1,8 +1,19 @@
-interface iCustomer {
+export interface iCustomer {
+    id: number,
+    customer_name: string,
+    CNPJ: number,
+    phone: string,
+    // logo: string,
+    email: string,
+    password: string,
+    contacts: iContact
+}
+
+export interface iContact {
     id: number,
     name: string,
-    CNPJ: number,
-    image_url: string,
-    contacts: boolean
+    phone: string,
+    email: string,
+    isActive: boolean,
+    createdAt: Date
 }
-export default iCustomer

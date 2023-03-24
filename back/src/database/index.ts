@@ -1,32 +1,44 @@
-import iCustomer from "../types";
+import {iCustomer} from "../types";
 
 const database : iCustomer[] = [
     {
         id: 1,  
-        name: "CPFL",
+        customer_name: "CPFL",
         CNPJ: 123,
-        image_url: "https://www.cpfl.com.br/sites/cpfl/files/2021-12/Logo_CPFL_Energia.png",
+        phone: "9999-9999",
+        // logo: "https://www.cpfl.com.br/sites/cpfl/files/2021-12/Logo_CPFL_Energia.png",
+        email: "cpfl@kenzie.com",
+        password: "1234",
         contacts: true
     },
     {   
         id: 2,
-        name: "Amazon",
+        customer_name: "Amazon",
         CNPJ: 456,
-        image_url: "https://www.amazon.com.br/ref=nav_logo",
+        phone: "9999-9999",
+        // logo: "https://www.amazon.com.br/ref=nav_logo",
+        email: "Amazon@kenzie.com",
+        password: "1234",
         contacts: true
     },
     {
         id: 3,  
-        name: "Carbotrader",
+        customer_name: "Carbotrader",
         CNPJ: 789,
-        image_url: "https://carbotrader.com/sistema1/arquivos/imagens/carbotrader/layout/logotipo.png",
+        phone: "9999-9999",
+        // logo: "https://carbotrader.com/sistema1/arquivos/imagens/carbotrader/layout/logotipo.png",
+        email: "carbo@kenzie.com",
+        password: "1234",
         contacts: true
     },
     {   
         id: 4,
-        name: "CSS3",
+        customer_name: "Livro",
         CNPJ: 1234,
-        image_url: "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/crowther.jpg",
+        phone: "9999-9999",
+        // logo: "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/crowther.jpg",
+        email: "livro@kenzie.com",
+        password: "1234",
         contacts: true
     }
 
