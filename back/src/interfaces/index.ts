@@ -3,9 +3,8 @@ export interface iContactRequest {
     name: string,
     phone: string,
     email: string,
-    isActive: boolean
+  
 }
-
 export interface iCustomerRequest {
     customer_name: string,
     CNPJ: number,
@@ -22,19 +21,19 @@ export interface iCustomerLogin {
 
 //Response
 export interface iContactResponse {
-    id: number,
+    id: string,
     name: string,
     phone: string,
     email: string,
     isActive: boolean,
     createdAt: Date
 }
-
 export interface iCustomerResponse {
     id: string,
     customer_name: string,
     CNPJ: number,
     email: string,
+    isActive: boolean,
     contacts: iContactResponse[]
 }
 
@@ -43,10 +42,9 @@ export interface iContactUpdateRequest {
     name?: string,
     phone?: string,
     email?: string,
-    isActive?: boolean
 }
 export interface iCustomerUpdateRequest {
+    customer_name?: string,
     email?: string,
     password?: string,
-    contacts?: iContactUpdateRequest[]
 }

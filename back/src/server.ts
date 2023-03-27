@@ -9,6 +9,6 @@ import app from "./app"
     })
 
     app.listen(3001, () => {
-        console.log("Servidor executandoo")
+        console.log("Server is running")
     })
 })()

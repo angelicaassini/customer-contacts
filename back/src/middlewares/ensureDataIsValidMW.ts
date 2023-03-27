@@ -11,7 +11,7 @@ async (req:Request, res:Response, next:NextFunction) => {
         })
         req.body = validatedData
     }catch{
-        throw new AppError("Email or password incorrect.", 404)
+        throw new AppError("Data are incorrect.", 404)
     }
     return next()
 }

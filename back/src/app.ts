@@ -1,17 +1,18 @@
 import express from "express";
-// import database from "./database";
-// import "express-async-errors"
-// import handleError from "./errors/handleError"
-// import "reflect-metadata"
-// import userRoutes from "./routes/user.routes"
-// import loginRoutes from "./routes/login.routes"
+import "express-async-errors"
+import handleError from "./errors/handleError"
+import "reflect-metadata"
+
+import loginRoutes from "./routes/login.routes"
+import customersRoutes from "./routes/customers.routes";
+import contactsRoutes from "./routes/contacts.routes";
 
 const app = express()
 app.use(express.json())
 
 
-app.get("/customers", (req, res) => {
-    console.log("funcionou")
+const TT = app.get("/customers", (req, res) => {
+    console.log(TT)
     // const customers = database.map((customer) => {
     //     return {id:customer.id, name:customer.name}
     })
@@ -27,14 +28,12 @@ app.get("/customers", (req, res) => {
 //     return res.status(200).json(customer)
 // })
 
-// app.listen(3001, () => {
-//     console.log("server is running")
-// })
 
-// app.use("", userRoutes)
-// app.use("", loginRoutes)
+app.use("", customersRoutes)
+app.use("", loginRoutes)
+app.use("", contactsRoutes)
 
-// app.use(handleError)
+app.use(handleError)
 
 export default app
 

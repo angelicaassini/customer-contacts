@@ -16,5 +16,10 @@ const deleteCustomerService = async (params_id:string) => {
         throw new AppError("This customer isn't active", 400)
     }
 
+    const customerSoftDeleted = await customerRepository.save({
+        ...findCustomer,
+        isActive: false
+    })
+
 }
 export default deleteCustomerService

@@ -1,7 +1,8 @@
 import {Entity, PrimaryGeneratedColumn, Column, BeforeInsert, OneToMany, BeforeUpdate} from "typeorm"
 import {hashSync} from "bcryptjs"
 import Contact from "./contact.entity"
-import { iContact } from "../types";
+import { iContactRequest, iContactResponse } from "../interfaces";
+
     
 @Entity("customers")
 class Customer{
@@ -34,7 +35,7 @@ class Customer{
 
     @OneToMany(
         () => Contact, (contact) => contact.customer, {eager: true})
-        contacts: iContact[]
+        contacts: iContactResponse[]
 
     
 }
