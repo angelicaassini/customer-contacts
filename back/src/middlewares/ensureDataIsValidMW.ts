@@ -4,6 +4,7 @@ import AppError from "../errors/AppError"
 
 const ensureDataIsValidMW = (Schema: AnySchema) => 
 async (req:Request, res:Response, next:NextFunction) => {
+    
     try {
         const validatedData = await Schema.validate(req.body, {
             abortEarly: false,

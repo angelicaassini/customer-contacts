@@ -6,6 +6,7 @@ import { contactResponseSchema } from "../../schemas/contact.schema"
 
 const createContactService = async (contactData:iContactRequest, customer_id: string
 ):Promise<iContactResponse> => {
+    
     const contactRepository = AppDataSource.getRepository(Contact)   
     const createdContact = contactRepository.create(contactData)
     await contactRepository.save(createdContact)

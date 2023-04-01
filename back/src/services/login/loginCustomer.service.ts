@@ -8,10 +8,16 @@ import jwt from "jsonwebtoken";
 import { iCustomerLogin } from "../../interfaces";
 import { compare } from "bcryptjs";
 
+export interface iResponse{
+  token: string,
+  userId:string
+}
+
 const loginCustomerService = async (
   customerData: iCustomerLogin
-): Promise<string> => {
+): Promise<iResponse> => {
   const customerRepository = AppDataSource.getRepository(Customer);
+
   const findCustomer = await customerRepository.findOneBy({
     email: customerData.email,
   });
@@ -19,15 +25,16 @@ const loginCustomerService = async (
   if (!findCustomer) {
     throw new AppError("Email or password invalid.", 403);
   }
-
+ 
   const passwordMatch = await compare(
     customerData.password,
     findCustomer.password
   );
-
+  console.log("passWordMatch:", passwordMatch)
   if (!passwordMatch) {
     throw new AppError("Email or password invalid.", 403);
   }
+
 
   const token = jwt.sign(
     {
@@ -44,6 +51,10 @@ const loginCustomerService = async (
     throw new AppError("This customer isn't active.", 403);
   }
 
-  return token;
+  // localStorage.setItem("@INFINITY-CUSTOMER", findCustomer.id);
+  const userId = findCustomer.id
+  const resposta = {token, userId}
+  
+  return resposta;
 };
 export default loginCustomerService;
