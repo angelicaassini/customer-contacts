@@ -1,9 +1,9 @@
 # 🏁 Entrega Fullstack - projeto **customer-contacts**
 Este projeto denominado "customer-contacts" cria um registro de cliente com um link de contato e mostra o cliente e seus contatos vinculados.
-### Para acessar a parte Backend, é necessário entrar na pasta de nome __back__e seguir as instruções a seguir.
+### Para acessar a parte Backend, é necessário entrar na pasta de nome _back_ e seguir as instruções a seguir.
+_Esta aplicação foi desenvolvida em TypeScript_ 
 
-
-Para inciar este projeto, é necessário instalar as dependências. Portanto utilize o comando abaixo para instalar tais dependências:
+Para inciar 🔰 este projeto, é necessário instalar as dependências, utilizando um dos comandos abaixo:
 
 ```
 yarn install
@@ -15,10 +15,10 @@ npm install
 
 <br>
 
-**Configure as variáveis de ambiente no seu .env**, passando as credenciais corretas para conectar em seu banco local
+**Configure as variáveis de ambiente no seu .env**, passando as credenciais corretas para conectar em seu banco local.
 
 
-Com isso feito, para rodar sua aplicação, basta utilizar o comando
+Com isso feito, para rodar sua aplicação, basta utilizar o comando 
 ```
 yarn dev
 ```
@@ -29,24 +29,22 @@ npm run dev
 
 <br>
 
-## Endpoints 
+## Endpoints :
 A API tem um total de 11 endpoints, sendo divididos em 2 grupos: CRUD do customer, CRUD dos contatos e login.
 
-Endpoints:
+POST/customers - Criação de cliente (usuário) <br>
+GET/customers - Lista todos os clientes  <br>
+GET/customers/<id> - Lista um cliente específico  <br>
+PATCH/customers/<id> - Atualiza dados de um cliente <br>
+DELETE/customers - Realiza um soft delete no cliente <br>
 
-POST/customers - Criação de cliente (usuário) 
-GET/customers - Lista todos os clientes 
-GET/customers/<id> - Lista um cliente específico 
-PATCH/customers/<id> - Atualiza dados de um cliente
-DELETE/customers - Realiza um soft delete no cliente
-
-POST/login - Gera o token de autenticação
+POST/login - Gera o token de autenticação <br>
   
-POST/contacts - Criação de contato
-GET/contacts - Lista todos os contatos 
-GET/contacts/<id> - Lista um contato específico 
-PATCH/contacts/<id> - Atualiza dados de um contato
-DELETE/contacts - Realiza um soft delete no contato
+POST/contacts - Criação de contato <br>
+GET/contacts - Lista todos os contatos  <br>
+GET/contacts/<id> - Lista um contato específico <br> 
+PATCH/contacts/<id> - Atualiza dados de um contato <br>
+DELETE/contacts - Realiza um soft delete no contato <br>
   
 ## Exemplos de requisição de POST e PATCH:
 
@@ -89,6 +87,6 @@ DELETE/contacts - Realiza um soft delete no contato
 ```
 
 
-### Caso você seja um usuário de Insomnia, tem disponibilizado um **workspace** prontinho para faciilitar na sua visualização.
+### Caso você seja um usuário de Insomnia, tem disponibilizado um **workspace** prontinho para facilitar na sua visualização. 
 
 ### Agora que já sabe como iniciar o seu projeto e rodar os testes, bom proveito utilizando esta aplicação para cadstrar clientes e seus contatos!
