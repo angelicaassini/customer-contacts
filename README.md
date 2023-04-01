@@ -38,7 +38,7 @@ POST/customers - Criação de cliente (usuário)
 GET/customers - Lista todos os clientes 
 GET/customers/<id> - Lista um cliente específico 
 PATCH/customers/<id> - Atualiza dados de um cliente
-DELETE/customers/ - Realiza um soft delete no cliente
+DELETE/customers - Realiza um soft delete no cliente
 
 POST/login - Gera o token de autenticação
   
@@ -46,7 +46,7 @@ POST/contacts - Criação de contato
 GET/contacts - Lista todos os contatos 
 GET/contacts/<id> - Lista um contato específico 
 PATCH/contacts/<id> - Atualiza dados de um contato
-DELETE/contacts/ - Realiza um soft delete no contato
+DELETE/contacts - Realiza um soft delete no contato
   
 ## Exemplos de requisição de POST e PATCH:
 
