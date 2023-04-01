@@ -1,6 +1,7 @@
 # 🏁 Entrega Fullstack - projeto **customer-contacts**
 Este projeto denominado "customer-contacts" cria um registro de cliente com um link de contato e mostra o cliente e seus contatos vinculados.
 ### Para acessar a parte Backend, é necessário entrar na pasta de nome _back_ e seguir as instruções a seguir.
+A parte de front end foi desenvolvida neste repositório [GitHub Page](https://github.com/angelicaassini/customer-contacts-front) <br>
 _Esta aplicação foi desenvolvida em TypeScript_ 
 
 Para inciar 🔰 este projeto, é necessário instalar as dependências, utilizando um dos comandos abaixo:
