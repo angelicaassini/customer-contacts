@@ -4,7 +4,27 @@ Este projeto denominado "customer-contacts" cria um registro de cliente com um l
 A parte de front end foi desenvolvida neste repositório [GitHub Page](https://github.com/angelicaassini/customer-contacts-front) <br>
 _Esta aplicação foi desenvolvida em TypeScript_ 
 
-Para inciar 🔰 este projeto, é necessário instalar as dependências, utilizando um dos comandos abaixo:
+## Requisitos
+
+- Node.js v12 ou superior
+- NPM v6 ou superior
+- PostgreSQL v9.6 ou superior
+
+Para inciar 🔰 este projeto, primeiro é necessário clonar os repositórios:<br>
+### BACKEND
+
+```
+git clone git@github.com:angelicaassini/customer-contacts.git
+
+```
+### FRONTEND
+```
+
+git clone git@github.com:angelicaassini/customer-contacts-front.git
+```
+
+
+Após isso, é necessário instalar as dependências, utilizando um dos comandos abaixo:
 
 ```
 yarn install
@@ -16,14 +36,23 @@ npm install
 
 <br>
 
-**Configure as variáveis de ambiente no seu .env**, passando as credenciais corretas para conectar em seu banco local.
+**Configure as variáveis de ambiente no seu .env**, passando as credenciais corretas para conectar em seu banco local.<br>
 
+Appós isso, é necessário rodar as migrations, utilizando:
+
+```
+yarn typeorm migration:run -- -d src/data-source
+```
+ou
+```
+npm run typeorm migration:run -- -d src/data-source
+```
 
 Com isso feito, para rodar sua aplicação, basta utilizar o comando 
 ```
 yarn dev
 ```
-or 
+ou 
 ```
 npm run dev
 ```
@@ -35,17 +64,17 @@ A API tem um total de 11 endpoints, sendo divididos em 2 grupos: CRUD do custome
 
 POST/customers - Criação de cliente (usuário) <br>
 GET/customers - Lista todos os clientes  <br>
-GET/customers/<id> - Lista um cliente específico  <br>
-PATCH/customers/<id> - Atualiza dados de um cliente <br>
-DELETE/customers - Realiza um soft delete no cliente <br>
+GET/customers/:id - Lista um cliente específico  <br>
+PATCH/customers/:id - Atualiza dados de um cliente <br>
+DELETE/customers/:id - Realiza um soft delete no cliente <br>
 
 POST/login - Gera o token de autenticação <br>
   
 POST/contacts - Criação de contato <br>
 GET/contacts - Lista todos os contatos  <br>
-GET/contacts/<id> - Lista um contato específico <br> 
-PATCH/contacts/<id> - Atualiza dados de um contato <br>
-DELETE/contacts - Realiza um soft delete no contato <br>
+GET/contacts/:id - Lista um contato específico <br> 
+PATCH/contacts/:id - Atualiza dados de um contato <br>
+DELETE/contacts/:id - Realiza um soft delete no contato <br>
   
 ## Exemplos de requisição de POST e PATCH:
 
@@ -59,7 +88,7 @@ DELETE/contacts - Realiza um soft delete no contato <br>
     }
 ```
   
- ### PATCH/customers/<id> - Atualiza dados de um cliente (podem ser atualizados entre apenas 1 atá os 3 dados conforme abaixo). 
+ ### PATCH/customers/:id - Atualiza dados de um cliente (podem ser atualizados entre apenas 1 atá os 3 dados conforme abaixo). 
  O CNPJ não pode ser atualizado.
   ```
    {
@@ -78,7 +107,7 @@ DELETE/contacts - Realiza um soft delete no contato <br>
     }
 ```
 
- ### PATCH/contacts/<id> - Atualiza dados de um contato(podem ser atualizados entre apenas 1 atá os 3 dados conforme abaixo).                     
+ ### PATCH/contacts/:id - Atualiza dados de um contato(podem ser atualizados entre apenas 1 atá os 3 dados conforme abaixo).                     
   ```
    {
        "name": "Marcos Santos ATUALIZADO",
