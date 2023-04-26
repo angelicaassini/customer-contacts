@@ -5,6 +5,6 @@ import loginSchema from "../schemas/login.schema"
 
 const loginRoutes = Router()
 
-loginRoutes.post("/login", ensureDataIsValidMW(loginSchema), loginCustomerController)
+loginRoutes.post("/", ensureDataIsValidMW(loginSchema), loginCustomerController)
 
 export  default loginRoutes

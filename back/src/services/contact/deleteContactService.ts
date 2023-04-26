@@ -9,17 +9,21 @@ const deleteContactService = async (params_id: string) => {
     });
 
     if(!findContact){
-        throw new AppError("This contact does't exist.", 404)
+        throw new AppError("This contact does not exist.", 404)
     }
 
-    if(!findContact.isActive){
-        throw new AppError("This contact isn't active", 400)
-    }
+    await contactRepository.remove(findContact)
+    return {message: "Contact sucessfully deleted!"}
 
-    const contactSoftDeleted = await contactRepository.save({
-        ...findContact,
-        isActive: false
-    })
+
+    // if(!findContact.isActive){
+    //     throw new AppError("This contact isn't active", 400)
+    // }
+
+    // const contactSoftDeleted = await contactRepository.save({
+    //     ...findContact,
+    //     isActive: false
+    // })
 
 }
 export default deleteContactService

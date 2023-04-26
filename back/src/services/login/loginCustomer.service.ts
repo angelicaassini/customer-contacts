@@ -5,12 +5,13 @@ import "dotenv/config";
 
 import jwt from "jsonwebtoken";
 
-import { iCustomerLogin } from "../../interfaces";
+import { iCustomerLogin, iCustomerResponse } from "../../interfaces";
 import { compare } from "bcryptjs";
 
 export interface iResponse{
   token: string,
-  userId:string
+  customerId:string
+  customerFound: iCustomerResponse
 }
 
 const loginCustomerService = async (
@@ -52,9 +53,11 @@ const loginCustomerService = async (
   }
 
   // localStorage.setItem("@INFINITY-CUSTOMER", findCustomer.id);
-  const userId = findCustomer.id
-  const resposta = {token, userId}
+  const customerId = findCustomer.id
+  const {password, ...customerFound} = findCustomer
+  const resposta = {token, customerId, customerFound}
   
   return resposta;
 };
 export default loginCustomerService;
+

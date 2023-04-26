@@ -25,8 +25,8 @@ export const updateContactController = async (req:Request, res:Response) => {
 
 export const deleteContactController = async (req:Request, res:Response) => {
     const params_id: string = req.params.id;
-    await deleteContactService(params_id)
-    return res.status(204).json({})
+    const contact = await deleteContactService(params_id)
+    return res.status(204).json(contact)
 }
 
 
