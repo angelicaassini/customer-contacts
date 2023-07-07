@@ -3,7 +3,7 @@ import Customer from "../../entities/customer.entity";
 import AppError from "../../errors/AppError";
 import { iCustomerResponse} from "../../interfaces";
 
-const getCustomerService = async (params_id: string): Promise<iCustomerResponse|null> => {
+const getContactByCustomerService = async (params_id: string): Promise<iCustomerResponse|null> => {
   const customerRepository = AppDataSource.getRepository(Customer);
   const findCustomer = await customerRepository.findOne({
     where:{
@@ -20,4 +20,4 @@ const getCustomerService = async (params_id: string): Promise<iCustomerResponse|
 
   return findCustomer
 };
-export default getCustomerService;
+export default getContactByCustomerService;

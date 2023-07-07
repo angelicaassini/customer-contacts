@@ -1,9 +1,9 @@
 import {Request, Response} from "express"
 import { iContactRequest } from "../interfaces"
-import createContactService from "../services/contact/createContactService"
-import deleteContactService from "../services/contact/deleteContactService"
-import listAllContactsService from "../services/contact/listAllContactsService"
-import updateContactService from "../services/contact/updateContactService"
+import createContactService from "../services/contact/createContact.Service"
+import deleteContactService from "../services/contact/deleteContact.Service"
+import listAllContactsService from "../services/contact/listAllContacts.Service"
+import updateContactService from "../services/contact/updateContact.Service"
 
 export const createContactController = async (req:Request, res:Response) => {
     const contactData:iContactRequest = req.body

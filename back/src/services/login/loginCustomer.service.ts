@@ -17,6 +17,7 @@ export interface iResponse{
 const loginCustomerService = async (
   customerData: iCustomerLogin
 ): Promise<iResponse> => {
+  console.log("chegou aquino service!!!!!!!!!!!!!!!!!")
   const customerRepository = AppDataSource.getRepository(Customer);
 
   const findCustomer = await customerRepository.findOneBy({

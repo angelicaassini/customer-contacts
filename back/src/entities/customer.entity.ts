@@ -1,7 +1,7 @@
-import {Entity, PrimaryGeneratedColumn, Column, BeforeInsert, OneToMany, BeforeUpdate} from "typeorm"
+import {Entity, PrimaryGeneratedColumn, Column, BeforeInsert, OneToMany, BeforeUpdate, CreateDateColumn, UpdateDateColumn} from "typeorm"
 import {hashSync} from "bcryptjs"
 import Contact from "./contact.entity"
-import { iContactRequest, iContactResponse } from "../interfaces";
+import { iContactResponse } from "../interfaces";
 
     
 @Entity("customers")
@@ -27,15 +27,20 @@ class Customer{
     @Column({default: true})
     isActive: boolean;
 
+    @CreateDateColumn()
+    createdAt: Date;
+
+    @UpdateDateColumn()
+    updatedAt: Date;
+
     @BeforeUpdate()
     @BeforeInsert()
     hashPassword(){
         this.password = hashSync(this.password, 10);
     }
 
-    @OneToMany(
-        () => Contact, (contact) => contact.customer, {eager: true})
-        contacts: iContactResponse[]
+    @OneToMany(() => Contact, (contact) => contact.customer)
+        contacts: Contact[]
 
     
 }

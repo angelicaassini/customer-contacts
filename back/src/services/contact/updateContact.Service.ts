@@ -1,6 +1,7 @@
 import AppDataSource from "../../data-source";
 import Contact from "../../entities/contact.entity";
 import { iContactResponse, iContactUpdateRequest } from "../../interfaces";
+import { contactResponseSchema } from "../../schemas/contact.schema";
 
 const updateContactService = async (
   contactData: iContactUpdateRequest,
@@ -17,6 +18,11 @@ const updateContactService = async (
   });
   await contactRepository.save(updatedContact);
 
-  return updatedContact;
+  const updatedValidContact = await contactResponseSchema.validate(updatedContact, {
+    stripUnknown: true,
+    abortEarly: false
+  })
+
+  return updatedValidContact;
 };
 export default updateContactService;

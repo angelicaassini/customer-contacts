@@ -1,4 +1,8 @@
 //Request
+export interface iCustomerEntity {
+
+}
+
 export interface iContactRequest {
     name: string,
     phone: string,
@@ -10,7 +14,6 @@ export interface iCustomerRequest {
     CNPJ: number,
     email: string,
     password: string,
-    contacts: iContactRequest[]
 }
 
 export interface iCustomerLogin {
@@ -26,7 +29,8 @@ export interface iContactResponse {
     phone: string,
     email: string,
     isActive: boolean,
-    createdAt: Date
+    createdAt: Date,
+    updatedAt: Date
 }
 export interface iCustomerResponse {
     id: string,
@@ -34,6 +38,8 @@ export interface iCustomerResponse {
     CNPJ: number,
     email: string,
     isActive: boolean,
+    createdAt: Date,
+    updatedAt: Date,
     contacts: iContactResponse[]
 }
 

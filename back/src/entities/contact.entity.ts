@@ -1,5 +1,5 @@
 import {Entity, PrimaryGeneratedColumn
-    , Column, CreateDateColumn, ManyToOne} from "typeorm"
+    , Column, CreateDateColumn, ManyToOne, UpdateDateColumn} from "typeorm"
 import { iCustomerRequest } from "../interfaces";
 import Customer from "./customer.entity"
     
@@ -22,10 +22,12 @@ class Contact{
 
     @CreateDateColumn()
     createdAt: Date;
-    
+
+    @UpdateDateColumn()
+    updatedAt: Date;
 
     @ManyToOne(() => Customer, (customer) => customer.contacts)
-    customer: iCustomerRequest;
+    customer: Customer;
     
 }
 export default Contact

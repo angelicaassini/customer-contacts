@@ -21,6 +21,8 @@ export const customerRequestSchema: Schema<iCustomerRequest|any> = yup
     CNPJ: yup.number().required(),
     email: yup.string().required(),
     isActive: yup.boolean().default(true),
+    createdAt: yup.date(),
+    updatedAt: yup.date(),
     contacts: yup.array().of(contactResponseSchema)
   });
 
@@ -33,7 +35,7 @@ export const customerUpdateRequestSchema: Schema<iCustomerUpdateRequest|any> = y
 export const customerContactResponseSchema: Schema<iCustomerResponse|any> = yup
 .object()
 .shape({
-  customer_name: yup.string().required(),
-  CNPJ: yup.number().required(),
-  email: yup.string().required(),
+  customer_name: yup.string(),
+  CNPJ: yup.number(),
+  email: yup.string()
 });

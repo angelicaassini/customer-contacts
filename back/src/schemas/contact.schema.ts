@@ -20,7 +20,7 @@ export const contactResponseSchema: Schema<iContactResponse|any> = yup
     email: yup.string(),
     isActive: yup.boolean().default(true),
     createdAt: yup.date(),
-    customer: customerContactResponseSchema
+    updatedAt: yup.date()
   });
 
 
@@ -28,4 +28,14 @@ export const contactUpdateRequestSchema: Schema<iContactUpdateRequest|any> = yup
     name: yup.string().notRequired(),
     phone: yup.string().notRequired(),
     email: yup.string().notRequired(),
+});
+
+export const contactUpdateResponseSchema: Schema<iContactResponse|any> = yup.object().shape({
+    id: yup.string(),
+    name: yup.string(),
+    phone: yup.string(),
+    email: yup.string(),
+    isActive: yup.boolean().default(true),
+    createdAt: yup.date(),
+    updatedAt: yup.date(),
 });
